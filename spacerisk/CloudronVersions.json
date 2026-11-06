@@ -820,6 +820,47 @@
             "creationDate": "Fri, 06 Nov 2026 19:59:43 GMT",
             "ts": "Fri, 06 Nov 2026 19:59:43 GMT",
             "publishState": "published"
+        },
+        "1.16.0": {
+            "manifest": {
+                "id": "com.frivolddigital.spacerisk",
+                "title": "SpaceRisk",
+                "tagline": "ISO 31000 risk register with monthly team reviews",
+                "description": "SpaceRisk is a risk register built on ISO 31000, with monthly review cycles.\n\n* Every team keeps its own risks, with likelihood × consequence scoring, treatment actions and owners.\n* Each month, every team reviews its risks and its lead submits an attested return.\n* Executive and team dashboards show a heat map, trends and risks above appetite.\n* Excel export, plus a full data export and import as a single SQLite file.\n\nLogin is local to the app. Roles are executive, team lead and member.\n",
+                "changelog": "* Cyber programme transformation map (off by default; executives switch it on under Teams & users). Choose your targets: harden digital controls and services, ISO 27001 (implement an ISMS), NIS2, better GDPR handling, professional IT, digital and cloud, supplier improvements. SpaceRisk drafts initiatives from a library where your data shows a gap and links the risks they reduce.\n* Every initiative gets a risk-based score that says why (risk reduction, requirements, deadline, effort), and is marked Do first, Next or Later. \"Suggest a plan\" places the initiatives in quarters, dependencies first, without overloading a stream; pin anything you decide yourself.\n* A 3-year map in 8 renamable streams with your own milestones, as a page, a PowerPoint (the map plus a \"Do first\" slide) and a PDF.\n",
+                "postInstallMessage": "SpaceRisk starts **empty and reachable by anyone**. Until it has data, the `/restore` page lets\nwhoever opens it first upload a backup, including their own executive account. Do one of these\nstraight away:\n\n* **Restore a backup:** open `$CLOUDRON-APP-ORIGIN/restore` and upload a file made with\n  *Admin → Export all data* (or `flask export-data`).\n* **Start fresh:** open the app's Web Terminal in the dashboard and run\n  `cd /app/code && flask --app app create-executive <username> \"<Full name>\"`. It asks for a password.\n\nLogin is local to SpaceRisk and doesn't use Cloudron accounts.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/spacerisk",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "productivity"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/screenshot-dashboard.png"
+                ],
+                "version": "1.16.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/login",
+                "memoryLimit": 536870912,
+                "addons": {
+                    "localstorage": {
+                        "sqlite": {
+                            "paths": [
+                                "/app/data/spacerisk.sqlite"
+                            ]
+                        }
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/spacerisk/web-cloudron:8d4407b"
+            },
+            "creationDate": "Fri, 06 Nov 2026 20:53:50 GMT",
+            "ts": "Fri, 06 Nov 2026 20:53:50 GMT",
+            "publishState": "published"
         }
     }
 }
