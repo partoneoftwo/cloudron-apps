@@ -943,6 +943,47 @@
             "creationDate": "Sat, 07 Nov 2026 07:11:05 GMT",
             "ts": "Sat, 07 Nov 2026 07:11:05 GMT",
             "publishState": "published"
+        },
+        "1.18.0": {
+            "manifest": {
+                "id": "com.frivolddigital.spacerisk",
+                "title": "SpaceRisk",
+                "tagline": "ISO 31000 risk register with monthly team reviews",
+                "description": "SpaceRisk is a risk register built on ISO 31000, with monthly review cycles.\n\n* Every team keeps its own risks, with likelihood × consequence scoring, treatment actions and owners.\n* Each month, every team reviews its risks and its lead submits an attested return.\n* Executive and team dashboards show a heat map, trends and risks above appetite.\n* Excel export, plus a full data export and import as a single SQLite file.\n\nLogin is local to the app. Roles are executive, team lead and member.\n",
+                "changelog": "* Welcome page: a clear drawing of how ISO 31000 risk management flows, from principles and framework to identifying, analysing, evaluating and treating risks, with communication, monitoring and reporting alongside. Every step links to where you do it in SpaceRisk. Shown once after your first login, then from \"How it works\" in the header.\n* Fixed: the team's monthly return was called a financial \"return\" in German, Spanish, French, Italian and Portuguese.\n",
+                "postInstallMessage": "SpaceRisk starts **empty and reachable by anyone**. Until it has data, the `/restore` page lets\nwhoever opens it first upload a backup, including their own executive account. Do one of these\nstraight away:\n\n* **Restore a backup:** open `$CLOUDRON-APP-ORIGIN/restore` and upload a file made with\n  *Admin → Export all data* (or `flask export-data`).\n* **Start fresh:** open the app's Web Terminal in the dashboard and run\n  `cd /app/code && flask --app app create-executive <username> \"<Full name>\"`. It asks for a password.\n\nLogin is local to SpaceRisk and doesn't use Cloudron accounts.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/spacerisk",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "productivity"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/screenshot-dashboard.png"
+                ],
+                "version": "1.18.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/login",
+                "memoryLimit": 536870912,
+                "addons": {
+                    "localstorage": {
+                        "sqlite": {
+                            "paths": [
+                                "/app/data/spacerisk.sqlite"
+                            ]
+                        }
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/spacerisk/web-cloudron:81e423a"
+            },
+            "creationDate": "Sat, 07 Nov 2026 08:05:10 GMT",
+            "ts": "Sat, 07 Nov 2026 08:05:10 GMT",
+            "publishState": "published"
         }
     }
 }
