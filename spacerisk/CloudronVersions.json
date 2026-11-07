@@ -984,6 +984,47 @@
             "creationDate": "Sat, 07 Nov 2026 08:05:10 GMT",
             "ts": "Sat, 07 Nov 2026 08:05:10 GMT",
             "publishState": "published"
+        },
+        "1.19.0": {
+            "manifest": {
+                "id": "com.frivolddigital.spacerisk",
+                "title": "SpaceRisk",
+                "tagline": "ISO 31000 risk register with monthly team reviews",
+                "description": "SpaceRisk is a risk register built on ISO 31000, with monthly review cycles.\n\n* Every team keeps its own risks, with likelihood × consequence scoring, treatment actions and owners.\n* Each month, every team reviews its risks and its lead submits an attested return.\n* Executive and team dashboards show a heat map, trends and risks above appetite.\n* Excel export, plus a full data export and import as a single SQLite file.\n\nLogin is local to the app. Roles are executive, team lead and member.\n",
+                "changelog": "* SharpHound / BloodHound uploads under Cyber programme → Technical assessments: upload the zip SharpHound writes and see which users and computers have an attack path to Domain Admins, with the shortest paths spelled out, plus Kerberoastable and AS-REP roastable accounts, unconstrained delegation, unsupported Windows, missing LAPS, password flags, stale accounts and Tier 0 accounts logged on to ordinary computers.\n* Upload tool results from scripts: agents can send PingCastle, Prowler or SharpHound output to the API (for example a nightly Prowler scan). The upload page shows a curl example.\n* Technical evidence on ISO 27001 control pages: open findings from the tools that point at a control are listed there.\n* Export technical assessments as PDF, PowerPoint or Excel, per domain or cloud account and as an overview. The executive summary gets an Appendix E with the latest results.\n* New screenshot for the Cloudron app listing.\n",
+                "postInstallMessage": "SpaceRisk starts **empty and reachable by anyone**. Until it has data, the `/restore` page lets\nwhoever opens it first upload a backup, including their own executive account. Do one of these\nstraight away:\n\n* **Restore a backup:** open `$CLOUDRON-APP-ORIGIN/restore` and upload a file made with\n  *Admin → Export all data* (or `flask export-data`).\n* **Start fresh:** open the app's Web Terminal in the dashboard and run\n  `cd /app/code && flask --app app create-executive <username> \"<Full name>\"`. It asks for a password.\n\nLogin is local to SpaceRisk and doesn't use Cloudron accounts.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/spacerisk",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "productivity"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/screenshot-dashboard.png"
+                ],
+                "version": "1.19.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/login",
+                "memoryLimit": 536870912,
+                "addons": {
+                    "localstorage": {
+                        "sqlite": {
+                            "paths": [
+                                "/app/data/spacerisk.sqlite"
+                            ]
+                        }
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/spacerisk/web-cloudron:19e3cc6"
+            },
+            "creationDate": "Sat, 07 Nov 2026 08:53:31 GMT",
+            "ts": "Sat, 07 Nov 2026 08:53:31 GMT",
+            "publishState": "published"
         }
     }
 }
