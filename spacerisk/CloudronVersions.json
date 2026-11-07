@@ -1025,6 +1025,47 @@
             "creationDate": "Sat, 07 Nov 2026 08:53:31 GMT",
             "ts": "Sat, 07 Nov 2026 08:53:31 GMT",
             "publishState": "published"
+        },
+        "1.20.0": {
+            "manifest": {
+                "id": "com.frivolddigital.spacerisk",
+                "title": "SpaceRisk",
+                "tagline": "ISO 31000 risk register with monthly team reviews",
+                "description": "SpaceRisk is a risk register built on ISO 31000, with monthly review cycles.\n\n* Every team keeps its own risks, with likelihood × consequence scoring, treatment actions and owners.\n* Each month, every team reviews its risks and its lead submits an attested return.\n* Executive and team dashboards show a heat map, trends and risks above appetite.\n* Excel export, plus a full data export and import as a single SQLite file.\n\nLogin is local to the app. Roles are executive, team lead and member.\n",
+                "changelog": "* Incident register (Compliance → Incidents): record an incident once and SpaceRisk works out every legal reporting deadline from when you became aware of it: GDPR (72 hours), NIS2 (24 hours, 72 hours, one month), DORA (4 hours after classifying it as major, at the latest 24 hours) and the CRA. Mark each report as sent; overdue reports come first and show as a banner on the executive dashboard. Link the incident to its risk, the barriers that failed and a nonconformity.\n* New compliance frameworks, each switched on or off under Teams & users: NIS2, DORA, DORA-loven and digitalsikkerhetsloven, in English and Norwegian.\n* Showcases: the example ISMS is now fully filled in (evidence on every control and clause, a year of audits and management reviews, legal obligations, incidents with their reports) and is included in the three generic samples too. The Norwegian hospital showcase is Norwegian throughout.\n",
+                "postInstallMessage": "SpaceRisk starts **empty and reachable by anyone**. Until it has data, the `/restore` page lets\nwhoever opens it first upload a backup, including their own executive account. Do one of these\nstraight away:\n\n* **Restore a backup:** open `$CLOUDRON-APP-ORIGIN/restore` and upload a file made with\n  *Admin → Export all data* (or `flask export-data`).\n* **Start fresh:** open the app's Web Terminal in the dashboard and run\n  `cd /app/code && flask --app app create-executive <username> \"<Full name>\"`. It asks for a password.\n\nLogin is local to SpaceRisk and doesn't use Cloudron accounts.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/spacerisk",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "productivity"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/spacerisk/screenshot-dashboard.png"
+                ],
+                "version": "1.20.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/login",
+                "memoryLimit": 536870912,
+                "addons": {
+                    "localstorage": {
+                        "sqlite": {
+                            "paths": [
+                                "/app/data/spacerisk.sqlite"
+                            ]
+                        }
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/spacerisk/web-cloudron:6ce8154"
+            },
+            "creationDate": "Sat, 07 Nov 2026 11:39:43 GMT",
+            "ts": "Sat, 07 Nov 2026 11:39:43 GMT",
+            "publishState": "published"
         }
     }
 }
