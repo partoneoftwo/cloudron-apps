@@ -148,6 +148,43 @@
             "creationDate": "Tue, 10 Nov 2026 10:18:19 GMT",
             "ts": "Tue, 10 Nov 2026 10:18:19 GMT",
             "publishState": "testing"
+        },
+        "0.3.0": {
+            "manifest": {
+                "id": "com.frivolddigital.manyworldshistorian",
+                "title": "Many Worlds Historian",
+                "tagline": "Explore network history collected by Malcolm",
+                "description": "Many Worlds Historian is a web application for exploring network history collected by Malcolm.\n\n* See activity over time, alerts, protocols and the busiest hosts for any time range.\n* Click a host, protocol or rule to filter the whole page, and open any event to see its raw record.\n* Open a printable report: whether the monitoring was complete, findings ranked by severity, who sent commands to controllers, what changed since the period before, and hosts checked against the asset inventory.\n* Access uses your Cloudron login.\n\nThis test version shows **simulated data only**. Everything on screen is invented, and the page says so in a banner.\n",
+                "changelog": "* The report now starts by saying whether its numbers can be trusted: sensor status, gaps in the record, capture loss and whether Malcolm's searches were complete.\n* New report section on controller changes: who sent write or operate commands to controllers, and whether the sender's role is one that should.\n* New report section on what changed since the period before: new devices, connections, protocols and external destinations, and devices no longer seen.\n* The dashboard warns when Malcolm could only search part of its data.\n* The simulated plant now keeps two weeks of history, so a weekly report has an earlier week to compare with.\n",
+                "postInstallMessage": "Sign in with your Cloudron account. Only users you grant access to this app can open it.\n\nThis version shows **simulated data**. It does not connect to a Malcolm instance yet.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/manyworldshistorian",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/screenshot-dashboard.png"
+                ],
+                "version": "0.3.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/",
+                "memoryLimit": 805306368,
+                "addons": {
+                    "proxyAuth": {
+                        "path": "/"
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/manyworldshistorian/web-cloudron:06c1c2b"
+            },
+            "creationDate": "Tue, 10 Nov 2026 17:00:38 GMT",
+            "ts": "Tue, 10 Nov 2026 17:00:38 GMT",
+            "publishState": "testing"
         }
     }
 }
