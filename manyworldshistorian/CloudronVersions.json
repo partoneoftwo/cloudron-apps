@@ -333,6 +333,43 @@
             "creationDate": "Thu, 12 Nov 2026 05:08:12 GMT",
             "ts": "Thu, 12 Nov 2026 05:08:12 GMT",
             "publishState": "testing"
+        },
+        "0.8.0": {
+            "manifest": {
+                "id": "com.frivolddigital.manyworldshistorian",
+                "title": "Many Worlds Historian",
+                "tagline": "Explore network history collected by Malcolm",
+                "description": "Many Worlds Historian is a web application for exploring network history collected by Malcolm.\n\n* Opens on the report. The dashboard for exploring the history by hand is one click away.\n* See activity over time, alerts, protocols and the busiest hosts for any time range.\n* Click a host, protocol or rule to filter the whole page, and open any event to see its raw record.\n* Open a printable report in three views: a one-page executive summary, an OT owner view and the full report.\n* The report says whether the monitoring was complete, ranks findings by severity, and answers questions such as who sent commands to controllers, what changed, whether network zones are separated and who has remote access into the plant.\n* Charts show the critical findings, when the hazard events happened, what the sensors recorded, the traffic between zones, the senders of controller commands and the hours AI model calls fall in.\n* A chapter on AI agents grades every host from what can be seen on the wire: whether it talks to an AI model, whether it behaves like a program rather than a person, whether it then acts on the network, and whether that is concerning.\n* The AI Risk item in the header opens the AI Agents Watch: every host under watch, every finding tagged AI, and everything the rest of the report says about those same hosts, in one section.\n* Access uses your Cloudron login.\n\nThis test version shows **simulated data only**. Everything on screen is invented, and the page says so in a banner.\n",
+                "changelog": "* New AI Agents Watch section opens the AI chapter: every host with an indicator of AI activity, every finding tagged AI, and every other answer in the report that names one of those hosts, gathered in one place.\n* A finding raised anywhere in the report is now tagged AI when it is about a host that calls an AI model, so the threat match, the zone crossing or the remote access that happens to involve an agent is read together with it. The finding keeps its place in its own section and is marked \"AI watch\" there.\n* New AI Risk item in the report's header jumps straight to the section, from any view.\n* The watch adds no query and no measurement of its own; it says which hosts it can recognise and which rows it cannot, rather than implying the list is complete.\n",
+                "postInstallMessage": "Sign in with your Cloudron account. Only users you grant access to this app can open it.\n\nThis version shows **simulated data**. It does not connect to a Malcolm instance yet.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/manyworldshistorian",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/screenshot-dashboard.png"
+                ],
+                "version": "0.8.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/dashboard",
+                "memoryLimit": 805306368,
+                "addons": {
+                    "proxyAuth": {
+                        "path": "/"
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/manyworldshistorian/web-cloudron:bd3cfcf"
+            },
+            "creationDate": "Thu, 12 Nov 2026 06:26:48 GMT",
+            "ts": "Thu, 12 Nov 2026 06:26:48 GMT",
+            "publishState": "testing"
         }
     }
 }
