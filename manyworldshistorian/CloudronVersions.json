@@ -444,6 +444,43 @@
             "creationDate": "Thu, 12 Nov 2026 06:49:30 GMT",
             "ts": "Thu, 12 Nov 2026 06:49:30 GMT",
             "publishState": "testing"
+        },
+        "0.9.2": {
+            "manifest": {
+                "id": "com.frivolddigital.manyworldshistorian",
+                "title": "Many Worlds Historian",
+                "tagline": "Explore network history collected by Malcolm",
+                "description": "Many Worlds Historian is a web application for exploring network history collected by Malcolm.\n\n* Opens on the report. The dashboard for exploring the history by hand is one click away.\n* See activity over time, alerts, protocols and the busiest hosts for any time range.\n* Click a host, protocol or rule to filter the whole page, and open any event to see its raw record.\n* Open a printable report in three views: a one-page executive summary, an OT owner view and the full report.\n* The report says whether the monitoring was complete, ranks findings by severity, and answers questions such as who sent commands to controllers, what changed, whether network zones are separated and who has remote access into the plant.\n* Charts show the critical findings, when the hazard events happened, what the sensors recorded, the traffic between zones, the senders of controller commands and the hours AI model calls fall in.\n* A chapter on AI agents grades every host from what can be seen on the wire: whether it talks to an AI model, whether it behaves like a program rather than a person, whether it then acts on the network, and whether that is concerning.\n* The AI Risk item in the header opens the AI Agents Watch: every host under watch, every finding tagged AI, and everything the rest of the report says about those same hosts, in one section.\n* Access uses your Cloudron login.\n\nThis test version shows **simulated data only**. Everything on screen is invented, and the page says so in a banner.\n",
+                "changelog": "* The report the app opens on stays ready even after someone browses other time ranges, so the common page is the one that is never rebuilt while you wait.\n",
+                "postInstallMessage": "Sign in with your Cloudron account. Only users you grant access to this app can open it.\n\nThis version shows **simulated data**. It does not connect to a Malcolm instance yet.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/manyworldshistorian",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/screenshot-dashboard.png"
+                ],
+                "version": "0.9.2",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/dashboard",
+                "memoryLimit": 1073741824,
+                "addons": {
+                    "proxyAuth": {
+                        "path": "/"
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/manyworldshistorian/web-cloudron:ca146f5"
+            },
+            "creationDate": "Thu, 12 Nov 2026 06:55:56 GMT",
+            "ts": "Thu, 12 Nov 2026 06:55:56 GMT",
+            "publishState": "testing"
         }
     }
 }
