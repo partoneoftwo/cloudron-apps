@@ -703,6 +703,43 @@
             "creationDate": "Fri, 13 Nov 2026 10:39:27 GMT",
             "ts": "Fri, 13 Nov 2026 10:39:27 GMT",
             "publishState": "testing"
+        },
+        "0.14.0": {
+            "manifest": {
+                "id": "com.frivolddigital.manyworldshistorian",
+                "title": "Many Worlds Historian",
+                "tagline": "Explore network history collected by Malcolm",
+                "description": "Many Worlds Historian is a web application for exploring network history collected by Malcolm.\n\n* Opens on the report. The dashboard for exploring the history by hand is one click away.\n* See activity over time, alerts, protocols and the busiest hosts for any time range.\n* Click a host, protocol or rule to filter the whole page, and open any event to see its raw record.\n* Open a printable report in three views: a one-page executive summary, an OT owner view and the full report.\n* The report says whether the monitoring was complete, ranks findings by severity, and answers questions such as who sent commands to controllers, what changed, whether network zones are separated and who has remote access into the plant.\n* Charts show the critical findings, when the hazard events happened, what the sensors recorded, the traffic between zones, the senders of controller commands and the hours AI model calls fall in.\n* A chapter on AI agents grades every host from what can be seen on the wire: whether it talks to an AI model, whether it behaves like a program rather than a person, whether it then acts on the network, and whether that is concerning.\n* The AI Risk item in the header opens the AI Agents Watch: every host under watch, every finding tagged AI, and everything the rest of the report says about those same hosts, in one section.\n* A Conclusions page turns all of it into three lists: risks for a register, incidents for a SOC, and tasks with an owner, a due date and a test for when they are done.\n* Every page exports to PDF, Excel and PowerPoint, and the conclusions also export in a documented format with profiles for a risk register, a SIEM and a ticket queue.\n* Access uses your Cloudron login.\n\nThis test version shows **simulated data only**. Everything on screen is invented, and the page says so in a banner.\n",
+                "changelog": "* A new machine that is not yet on the tailnet now says so in the app's own log, with the link an operator has to open to authenticate it, repeated until it is done. On Cloudron that log is the only place such a link can be seen.\n* Once it is on, the log says so once, and speaks up again if the machine is ever logged out — a key expiring under a plant that nobody is watching.\n",
+                "postInstallMessage": "Sign in with your Cloudron account. Only users you grant access to this app can open it.\n\nThis version shows **simulated data**. It does not connect to a Malcolm instance yet.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/manyworldshistorian",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/screenshot-dashboard.png"
+                ],
+                "version": "0.14.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/dashboard",
+                "memoryLimit": 1073741824,
+                "addons": {
+                    "proxyAuth": {
+                        "path": "/"
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/manyworldshistorian/web-cloudron:e5f0d81"
+            },
+            "creationDate": "Fri, 13 Nov 2026 11:47:04 GMT",
+            "ts": "Fri, 13 Nov 2026 11:47:04 GMT",
+            "publishState": "testing"
         }
     }
 }
