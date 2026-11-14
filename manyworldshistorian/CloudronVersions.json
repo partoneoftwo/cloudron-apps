@@ -854,6 +854,44 @@
             "creationDate": "Sat, 14 Nov 2026 02:11:34 GMT",
             "ts": "Sat, 14 Nov 2026 02:11:34 GMT",
             "publishState": "testing"
+        },
+        "0.16.1": {
+            "manifest": {
+                "id": "com.frivolddigital.manyworldshistorian",
+                "title": "Many Worlds Historian",
+                "tagline": "Explore network history collected by Malcolm",
+                "description": "Many Worlds Historian is a web application for exploring the network history a sensor has collected.\n\n* Opens on the report. The dashboard for exploring the history by hand is one click away.\n* Say which network sensors to read on the Settings page, with a test that reports what each one answered. Until one is configured, everything on screen is invented and says so.\n* See activity over time, alerts, protocols and the busiest hosts for any time range.\n* Click a host, protocol or rule to filter the whole page, and open any event to see its raw record.\n* Open a printable report in three views: a one-page executive summary, an OT owner view and the full report.\n* The report says whether the monitoring was complete, ranks findings by severity, and answers questions such as who sent commands to controllers, what changed, whether network zones are separated and who has remote access into the plant.\n* Charts show the critical findings, when the hazard events happened, what the capture points recorded, the traffic between zones, the senders of controller commands and the hours AI model calls fall in.\n* A chapter on AI agents grades every host from what can be seen on the wire: whether it talks to an AI model, whether it behaves like a program rather than a person, whether it then acts on the network, and whether that is concerning.\n* The AI Risk item in the header opens the AI Agents Watch: every host under watch, every finding tagged AI, and everything the rest of the report says about those same hosts, in one section.\n* A client with several plants gets an organization-wide view: the plants ranked by what needs deciding, and what only shows when they are compared.\n* A Conclusions page turns all of it into three lists: risks for a register, incidents for a SOC, and tasks with an owner, a due date and a test for when they are done.\n* Every page exports to PDF, Excel and PowerPoint, and the conclusions also export in a documented format with profiles for a risk register, a SIEM and a ticket queue.\n* Send the conclusions straight to a SpaceRisk risk register with one button. Nothing is sent until it is pressed, and sending again updates instead of duplicating.\n* Access uses your Cloudron login.\n\nA new install reads nothing and shows **simulated data** — invented traffic from a fictional water\nplant — so the reports can be seen before anything is connected. Every page says so in a banner\nuntil a real sensor is configured.\n",
+                "changelog": "* Text is now black throughout: the headline, the answer under each question, the menu links and the tags no longer use dark blue, which some readers cannot make out on white. Links in tables no longer fall back to the browser's blue either.\n* The grey used for labels and notes is now a plain grey without a blue cast.\n* The PowerPoint export uses the same black and grey for its text.\n",
+                "postInstallMessage": "Sign in with your Cloudron account. Only users you grant access to this app can open it.\n\nOpen **Settings** in the menu at the top of any page to say which network sensors to read. Until\nyou do, every page shows **simulated data** — invented traffic from a fictional water plant, so\nyou can see what the reports look like before connecting anything.\n\nEach sensor needs an address this app can reach and a read-only login. If the sensors are on a\ntailnet, give their names there; otherwise forward each sensor's HTTPS port to this machine and\ngive the local address.\n\nTo send the conclusions to a SpaceRisk register, add SpaceRisk's address and an agent's token on\nthe same page. This is optional, and nothing is sent until somebody presses the button on the\nConclusions page.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/icon.png",
+                "website": "https://github.com/partoneoftwo/cloudron-apps",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/manyworldshistorian",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/manyworldshistorian/screenshot-dashboard.png"
+                ],
+                "version": "0.16.1",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 8000,
+                "healthCheckPath": "/dashboard",
+                "memoryLimit": 1073741824,
+                "addons": {
+                    "proxyAuth": {
+                        "path": "/"
+                    },
+                    "localstorage": {}
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/manyworldshistorian/web-cloudron:1d333bf"
+            },
+            "creationDate": "Sat, 14 Nov 2026 08:24:30 GMT",
+            "ts": "Sat, 14 Nov 2026 08:24:30 GMT",
+            "publishState": "testing"
         }
     }
 }
