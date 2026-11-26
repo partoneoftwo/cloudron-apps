@@ -1,0 +1,49 @@
+{
+    "stable": true,
+    "versions": {
+        "0.1.0": {
+            "manifest": {
+                "id": "com.frivolddigital.hyperdrive",
+                "title": "Hyperdrive",
+                "tagline": "Data platform on SQLite and Datasette",
+                "description": "Hyperdrive is a small, self-hosted data platform built on SQLite and Datasette. It covers the everyday\nextract, load and transform work that usually ends up in AWS Glue or Microsoft Fabric.\n\n* **In:** CSV files (comma or semicolon separated, detected automatically), REST APIs pulled on a schedule, and data pushed in over REST.\n* **Raw, then normalised:** everything lands untouched in a raw layer, then a normalisation step cleans column names, types, dates, decimal commas and duplicates. SQL models build further tables.\n* **Out:** JSON and CSV over REST, scheduled CSV files, and REST pushes to other systems. Datasette is included for exploring both layers.\n* **Auth:** API keys for calls into Hyperdrive; bearer, basic, API key and OAuth 2.0 client credentials for calls out. All set up in the web interface.\n\nLogin is local to the app.\n",
+                "changelog": "* First Cloudron package.\n",
+                "postInstallMessage": "Sign in with the user name `admin`. The password was generated on first start and is in\n`/app/data/credentials.txt`. Open it with the app's **File manager** in the Cloudron dashboard.\nTo change the login, edit that file and restart the app.\n\nLogin is local to Hyperdrive and doesn't use Cloudron accounts. Other systems call the REST API at\n`$CLOUDRON-APP-ORIGIN/v1/` with API keys that you create under **API access**.\n\nExtra settings, such as the time zone for schedules, go in `/app/data/env`.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/hyperdrive/icon.png",
+                "website": "https://github.com/partoneoftwo/hyperdrive-platform",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/hyperdrive",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "database",
+                    "analytics"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/hyperdrive/screenshot-dashboard.png"
+                ],
+                "version": "0.1.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 3000,
+                "healthCheckPath": "/healthz",
+                "memoryLimit": 1073741824,
+                "addons": {
+                    "localstorage": {
+                        "sqlite": {
+                            "paths": [
+                                "/app/data/meta.db",
+                                "/app/data/raw.db",
+                                "/app/data/core.db"
+                            ]
+                        }
+                    }
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/hyperdrive/web-cloudron:6685a59"
+            },
+            "creationDate": "Thu, 26 Nov 2026 12:31:34 GMT",
+            "ts": "Thu, 26 Nov 2026 12:31:34 GMT",
+            "publishState": "testing"
+        }
+    }
+}
