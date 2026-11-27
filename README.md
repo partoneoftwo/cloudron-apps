@@ -20,3 +20,13 @@ Needs Cloudron 10 or later. Source: [partoneoftwo/hyperdrive-platform](https://g
 1. Settings → Private registry: add `rotterdam.frivolddigital.com` with a download-only login.
 2. App Store → Community apps: add
    `https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/hyperdrive/CloudronVersions.json`
+
+## Agentgateway
+
+AI control plane: one gateway between coding agents such as Claude Code and the model providers they call.
+People keep their own Claude login; the gateway adds a gateway key and request logs. Needs Cloudron 10 or later.
+Source: [partoneoftwo/cyberdyne-aicontrolplane](https://github.com/partoneoftwo/cyberdyne-aicontrolplane).
+
+1. Settings → Private registry: add `rotterdam.frivolddigital.com` with a download-only login.
+2. App Store → Community apps: add
+   `https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/agentgateway/CloudronVersions.json`
