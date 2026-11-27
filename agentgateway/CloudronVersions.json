@@ -1,0 +1,52 @@
+{
+    "stable": true,
+    "versions": {
+        "0.1.0": {
+            "manifest": {
+                "id": "com.frivolddigital.agentgateway",
+                "title": "Agentgateway",
+                "tagline": "One control point for AI agent traffic",
+                "description": "Agentgateway is an open source gateway for AI agents, from the Linux Foundation. It sits between coding\nagents such as Claude Code and the model providers and tools they call, so access, logging and safety\nrules live in one place.\n\n* **Claude subscriptions pass through:** people keep their own Claude login or API key. The gateway adds\n  its own key check and logs, and holds no Anthropic key itself.\n* **One endpoint:** Anthropic today; local GPU models (vLLM, Ollama) and MCP servers can be added as routes.\n* **Admin UI** behind Cloudron login, with a playground and request view.\n\nPackaged by Frivold Digital from agentgateway 1.7.0.\n",
+                "changelog": "* First Cloudron package, agentgateway 1.7.0.\n* Anthropic route that passes the caller's own Claude login or API key through.\n",
+                "postInstallMessage": "The admin UI is on this app's main domain, behind Cloudron login. Agents call the **Gateway API domain**\nyou picked at install.\n\nEvery request to the gateway needs the gateway key in an `x-gateway-key` header. The key was generated on\nfirst start and is in `/app/data/gateway-key.txt`; open it with the app's **File manager**.\n\nTo send Claude Code through the gateway, add this to `~/.claude/settings.json` on each computer:\n\n```json\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"https://<gateway API domain>\",\n    \"ANTHROPIC_CUSTOM_HEADERS\": \"x-gateway-key: <gateway key>\"\n  }\n}\n```\n\nPeople keep their own Claude login. The live config is `/app/data/config.yaml`; restart the app after\nediting it by hand.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/agentgateway/icon.png",
+                "website": "https://agentgateway.dev",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/agentgateway",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "developer",
+                    "security"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/agentgateway/screenshot-routes.png"
+                ],
+                "version": "0.1.0",
+                "upstreamVersion": "1.7.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 15000,
+                "httpPorts": {
+                    "DATA_PLANE_DOMAIN": {
+                        "title": "Gateway API domain",
+                        "description": "Endpoint that Claude Code and other agents call. Not behind Cloudron login; every request needs the gateway key.",
+                        "containerPort": 3000,
+                        "defaultValue": "ai"
+                    }
+                },
+                "healthCheckPath": "/ui/",
+                "configurePath": "/ui/",
+                "memoryLimit": 536870912,
+                "addons": {
+                    "localstorage": {},
+                    "proxyAuth": {}
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/cyberdyne/agentgateway-cloudron:aa426b6"
+            },
+            "creationDate": "Fri, 27 Nov 2026 13:00:00 GMT",
+            "ts": "Fri, 27 Nov 2026 13:00:00 GMT",
+            "publishState": "testing"
+        }
+    }
+}
