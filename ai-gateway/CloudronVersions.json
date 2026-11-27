@@ -1,0 +1,53 @@
+{
+    "stable": true,
+    "versions": {
+        "0.1.0": {
+            "manifest": {
+                "id": "com.frivolddigital.aigateway",
+                "title": "AI Gateway",
+                "tagline": "One guarded entry point for coding agents' model and tool traffic",
+                "description": "AI Gateway puts one entry point in front of the model providers and MCP tool servers your coding\nagents use. It is [agentgateway](https://agentgateway.dev), an Apache-2.0 Linux Foundation project,\npackaged for Cloudron by Frivold Digital.\n\n* **One place for policy.** Guardrails, rate limits, tool access and request logs are set on the\n  gateway instead of on each laptop.\n* **Works with Claude subscriptions.** Claude Code keeps each person's own Claude login; the\n  gateway passes it on and holds no Anthropic key.\n* **Two addresses.** The admin interface is behind Cloudron login. The agent endpoint is on a\n  second domain and asks for a gateway key.\n",
+                "changelog": "* First version: agentgateway 1.7.0.\n* Claude Code traffic is passed to Anthropic with each person's own Claude login; the gateway holds no provider key.\n* A gateway key, generated on first start, is required on the agent endpoint.\n",
+                "postInstallMessage": "## Admin interface\n\nOpen $CLOUDRON-APP-ORIGIN and sign in with your Cloudron account.\n\n## Gateway key\n\nA key was generated on first start. Read it in the app's **Terminal**:\n\n    cat /app/data/.gateway_key\n\n## Point Claude Code at the gateway\n\nThe agent endpoint is the second domain chosen at install (suggested: `gw-api`); it is listed\nunder the app's **Location**. On the machine where Claude Code runs:\n\n    export ANTHROPIC_BASE_URL=\"https://<agent endpoint domain>\"\n    export ANTHROPIC_CUSTOM_HEADERS=\"x-gateway-key: <the key>\"\n    claude -p \"Hello\"\n\nClaude Code keeps using your own Claude login. Each request then shows in the admin interface\nand in the app's log.\n\n## Tools\n\nA demonstration MCP server answers at `https://<agent endpoint domain>/mcp`. MCP clients send the\nsame key as `Authorization: Bearer <the key>`. Replace it with real servers in the admin\ninterface or in `/app/data/config.yaml`.\n",
+                "icon": "file://cloudron/icon.png",
+                "iconUrl": "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/ai-gateway/icon.png",
+                "website": "https://agentgateway.dev",
+                "documentationUrl": "https://agentgateway.dev/docs/standalone/latest/",
+                "packageUrl": "https://github.com/partoneoftwo/cloudron-apps/tree/main/ai-gateway",
+                "packagerName": "Frivold Digital",
+                "packagerUrl": "https://frivolddigital.com",
+                "tags": [
+                    "security",
+                    "ai"
+                ],
+                "mediaLinks": [
+                    "https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/ai-gateway/screenshot-admin.png"
+                ],
+                "version": "0.1.0",
+                "upstreamVersion": "1.7.0",
+                "manifestVersion": 2,
+                "minBoxVersion": "10.0.0",
+                "httpPort": 15000,
+                "httpPorts": {
+                    "DATA_PLANE_DOMAIN": {
+                        "title": "Agent endpoint",
+                        "description": "Where agents send model and tool traffic. Not behind Cloudron login; protected by the gateway key.",
+                        "containerPort": 3000,
+                        "defaultValue": "gw-api"
+                    }
+                },
+                "healthCheckPath": "/ui/",
+                "configurePath": "/ui/",
+                "memoryLimit": 1073741824,
+                "addons": {
+                    "proxyAuth": {},
+                    "localstorage": {}
+                },
+                "dockerImage": "rotterdam.frivolddigital.com/ai-gateway/gateway-cloudron:457af03"
+            },
+            "creationDate": "Fri, 27 Nov 2026 13:32:34 GMT",
+            "ts": "Fri, 27 Nov 2026 13:32:34 GMT",
+            "publishState": "testing"
+        }
+    }
+}

@@ -20,3 +20,11 @@ Needs Cloudron 10 or later. Source: [partoneoftwo/hyperdrive-platform](https://g
 1. Settings → Private registry: add `rotterdam.frivolddigital.com` with a download-only login.
 2. App Store → Community apps: add
    `https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/hyperdrive/CloudronVersions.json`
+
+## AI Gateway
+
+agentgateway, set up for coding agents that use Claude subscriptions. Needs Cloudron 10 or later.
+
+1. Settings → Private registry: add `rotterdam.frivolddigital.com` with a download-only login.
+2. App Store → Community apps: add
+   `https://raw.githubusercontent.com/partoneoftwo/cloudron-apps/main/ai-gateway/CloudronVersions.json`
